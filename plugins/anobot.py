@@ -1,30 +1,28 @@
 """
 ✘ Commands Available -
 
----- Welcomes ----
-• `{i}setwelcome <message/reply to message>`
-    Set welcome message in the current chat.
+---- Norml ----
+• `{i}cc`
+    Cowo/Cewe?.
 
-• `{i}clearwelcome`
-    Delete the welcome in the current chat.
+• `{i}u`
+    umur.
 
-• `{i}getwelcome`
-    Get the welcome message in the current chat.
+• `{i}as`
+    askot.
 
----- GoodByes ----
-• `{i}setgoodbye <message/reply to message>`
-    Set goodbye message in the current chat.
+• `{i}me`
+    aku.
+---- 18+ ----
+• `{i}pap`
+    pap.
 
-• `{i}cleargoodbye`
-    Delete the goodbye in the current chat.
+• `{i}sa`
+    ange.
 
-• `{i}getgoodbye`
-    Get the goodbye message in the current chat.
-
-• `{i}thankmembers on/off`
-    Send a thank you sticker on hitting a members count of 100*x in your groups.
 """
 
+from curses import COLOR_WHITE
 from pyUltroid.fns.tools import create_tl_btn, format_btn, get_msg_button
 
 from . import HNDLR, eor, get_string, mediainfo, ultroid_cmd
@@ -32,8 +30,9 @@ from ._inline import something
 from pyUltroid.dB.echo_db import add_echo, check_echo, list_echo, rem_echo
 # Note = "\n\nNote: `{mention}`, `{group}`, `{count}`, `{name}`, `{fullname}`, `{username}`, `{userid}` can be used as formatting parameters.\n\n"Note = "\n\nNote: `{mention}`, `{group}`, `{count}`, `{name}`, `{fullname}`, `{username}`, `{userid}` can be used as formatting parameters.\n\n"
 
+
 @ultroid_cmd(
-    pattern="CC( (.*)|$)",
+    pattern="cc( (.*)|$)",
 )
 async def ceco(e):
     if k := list_echo(e.chat_id):
@@ -44,6 +43,75 @@ async def ceco(e):
             user += f"•{kk}" + "\n"
         await e.eor(user)
     else:
-        await e.eor("`**Cowo/Cewe?**`")
+        await e.eor("**Cowo/Cewe?**")
 
+@ultroid_cmd(
+    pattern="pap( (.*)|$)",
+)
+async def pap(e):
+    if k := list_echo(e.chat_id):
+        user = "**Activated Echo For Users:**\n\n"
+        for x in k:
+            ok = await e.client.get_entity(int(x))
+            kk = f"[{get_display_name(ok)}](tg://user?id={ok.id})"
+            user += f"•{kk}" + "\n"
+        await e.eor(user)
+    else:
+        await e.eor("**Minta Pap Dong**")
+
+@ultroid_cmd(
+    pattern="u( (.*)|$)",
+)
+async def umur(e):
+    if k := list_echo(e.chat_id):
+        user = "**Activated Echo For Users:**\n\n"
+        for x in k:
+            ok = await e.client.get_entity(int(x))
+            kk = f"[{get_display_name(ok)}](tg://user?id={ok.id})"
+            user += f"•{kk}" + "\n"
+        await e.eor(user)
+    else:
+        await e.eor("**Umur?**")
+
+@ultroid_cmd(
+    pattern="as( (.*)|$)",
+)
+async def asal(e):
+    if k := list_echo(e.chat_id):
+        user = "**Activated Echo For Users:**\n\n"
+        for x in k:
+            ok = await e.client.get_entity(int(x))
+            kk = f"[{get_display_name(ok)}](tg://user?id={ok.id})"
+            user += f"•{kk}" + "\n"
+        await e.eor(user)
+    else:
+        await e.eor("**Askot?**")
+
+@ultroid_cmd(
+    pattern="sa( (.*)|$)",
+)
+async def ange(e):
+    if k := list_echo(e.chat_id):
+        user = "**Activated Echo For Users:**\n\n"
+        for x in k:
+            ok = await e.client.get_entity(int(x))
+            kk = f"[{get_display_name(ok)}](tg://user?id={ok.id})"
+            user += f"•{kk}" + "\n"
+        await e.eor(user)
+    else:
+        await e.eor("**Lagi Sange Ngga??**")
+
+@ultroid_cmd(
+    pattern="me( (.*)|$)",
+)
+async def aing(e):
+    if k := list_echo(e.chat_id):
+        user = "**Activated Echo For Users:**\n\n"
+        for x in k:
+            ok = await e.client.get_entity(int(x))
+            kk = f"[{get_display_name(ok)}](tg://user?id={ok.id})"
+            user += f"•{kk}" + "\n"
+        await e.eor(user)
+    else:
+        await e.eor("**Cowo\n20th\njateng**")
 
