@@ -29,8 +29,8 @@ from pyUltroid.fns.tools import create_tl_btn, format_btn, get_msg_button
 
 from . import HNDLR, eor, get_string, mediainfo, ultroid_cmd
 from ._inline import something
-
-Note = "\n\nNote: `{mention}`, `{group}`, `{count}`, `{name}`, `{fullname}`, `{username}`, `{userid}` can be used as formatting parameters.\n\n"Note = "\n\nNote: `{mention}`, `{group}`, `{count}`, `{name}`, `{fullname}`, `{username}`, `{userid}` can be used as formatting parameters.\n\n"
+from pyUltroid.dB.echo_db import add_echo, check_echo, list_echo, rem_echo
+# Note = "\n\nNote: `{mention}`, `{group}`, `{count}`, `{name}`, `{fullname}`, `{username}`, `{userid}` can be used as formatting parameters.\n\n"Note = "\n\nNote: `{mention}`, `{group}`, `{count}`, `{name}`, `{fullname}`, `{username}`, `{userid}` can be used as formatting parameters.\n\n"
 
 @ultroid_cmd(
     pattern="CC( (.*)|$)",
